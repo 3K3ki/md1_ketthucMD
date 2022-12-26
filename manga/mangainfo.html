@@ -15,23 +15,37 @@
         <div class="div_top">
             <div class="left_top">
                 <p class="logo" style="font-size: 26px;margin-top: 5px">
-                    <a href="../index.html"><span style="color: red">C</span>MANGA</a>
+                    <a href="index.html"><span style="color: red">C</span>MANGA</a>
                 </p>
 
                 <div>
-                    <button  class="btn btn-outline-danger" onclick="switchLightMode()" id="light-dark" title="Chế độ sáng tối" >
-                        <i  class="bi bi-lightbulb-off-fill"></i>
+                    <button class="btn btn-outline-danger" onclick="switchLightMode()" id="light-dark"
+                            title="Chế độ sáng tối">
+                        <i class="bi bi-lightbulb-off-fill"></i>
                     </button>
                 </div>
-                <div class="d-flex align-items-center" style="border: 1px solid #cccccc;border-radius: 50px;color: #757575;padding: 0 45px 0 20px;height: 44px;width: 35%;margin-top: 5px">
+                <div class="d-flex align-items-center"
+                     style="border: 1px solid #cccccc;border-radius: 50px;color: #757575;padding: 0 45px 0 20px;height: 44px;width: 35%;margin-top: 5px">
                     <input class="form-control me-2" style="border: none" placeholder="Truyện bạn muốn tìm">
-                    <i class="bi bi-search " style="color: #dc4d4d" ></i>
+                    <i class="bi bi-search " style="color: #dc4d4d"></i>
                 </div>
             </div>
             <div class="right-top" style="text-align: center;margin-top: 10px">
-                <a class="btn btn-primary" role="button" id="login" onclick="document.getElementById('id01').style.display='block'" >Đăng nhập</a>
-                <a class="btn btn-primary" role="button" id="register" onclick="document.getElementById('id02').style.display='block'">Đăng ký</a>
-
+                <a class="btn btn-primary" role="button" id="login"
+                   onclick="document.getElementById('id01').style.display='block'">Đăng nhập</a>
+                <a class="btn btn-primary" role="button" id="register"
+                   onclick="document.getElementById('id02').style.display='block'">Đăng ký</a>
+                <div class="dropdown" id="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="logout()">Log out</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

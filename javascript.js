@@ -180,3 +180,16 @@ function register() {
 }
 
 //---------------------------HIện login-----------------------------
+let username2 = localStorage.getItem('nameKey')
+if (username2 != null) {
+    document.getElementById('register').innerHTML = "";
+    document.getElementById('login').innerHTML = "";
+    document.getElementById('dropdownMenuButton1').innerHTML = username2;
+} else {
+    document.getElementById('dropdown').style.display = 'none'
+}
+
+function logout() {
+    localStorage.removeItem('nameKey')
+    location.reload()
+}
