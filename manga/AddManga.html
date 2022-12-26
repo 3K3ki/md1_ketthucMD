@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AddManga</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../mangastyle.css">
+    <script src="manga.js"></script>
+
+</head>
+<body>
+<div class="ft_top" style="background-color: white">
+    <div class="ft_top" style="background-color: white">
+        <div class="div_top">
+            <div class="left_top">
+                <p class="logo" style="font-size: 26px;margin-top: 5px">
+                    <a href="index.html"><span style="color: red">C</span>MANGA</a>
+                </p>
+
+                <div>
+                    <button class="btn btn-outline-danger" onclick="switchLightMode()" id="light-dark"
+                            title="Chế độ sáng tối">
+                        <i class="bi bi-lightbulb-off-fill"></i>
+                    </button>
+                </div>
+                <div class="d-flex align-items-center"
+                     style="border: 1px solid #cccccc;border-radius: 50px;color: #757575;padding: 0 45px 0 20px;height: 44px;width: 35%;margin-top: 5px">
+                    <input class="form-control me-2" style="border: none" placeholder="Truyện bạn muốn tìm">
+                    <i class="bi bi-search " style="color: #dc4d4d"></i>
+                </div>
+            </div>
+            <div class="right-top" style="text-align: center;margin-top: 10px">
+                <a class="btn btn-primary" role="button" id="login"
+                   onclick="document.getElementById('id01').style.display='block'">Đăng nhập</a>
+                <a class="btn btn-primary" role="button" id="register"
+                   onclick="document.getElementById('id02').style.display='block'">Đăng ký</a>
+                <div class="dropdown" id="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="rounded col-12" style="background-color: #dc4d4d; text-align: center; margin: 20px 20px 20px 20px">
+            <div>
+                <input id="upload"  name="upload" type="file" class="form-control" onchange="chooseFile()">
+            </div>
+            <div class="input-group mb-3">
+                <input id="name" type="text" class="form-control">
+                <span class="input-group-mb-3"></span>
+            </div>
+            <div>
+                <input id="chapter" type="text" class="form-control">
+                <span class="input-group-mb-3"></span>
+            </div>
+
+            <div>
+                <input id="status" type="text" class="form-control">
+            </div>
+            <div>
+                <button onclick="createManga()"
+                        style="border-radius: 25%;background-color: #888888;color: #f0f0f0;border-color: #dc4d4d">Thêm
+                </button>
+            </div>
+
+            <table class="table">
+                <tr class="table-primary">
+                    <th>STT</th>
+                    <th id="displayImg">Hình ảnh</th>
+                    <th>NAME</th>
+                    <th>Chappter</th>
+                    <th>STATUS</th>
+                    <th>EDIT</th>
+                </tr>
+                <tbody id="drawTable"></tbody>
+            </table>
+        </div>
+        <div ></div>
+    </div>
+</div>
+</body>
+<script>
+    function chooseFile() {
+        var fileSelected = document.getElementById('upload').files;
+        if (fileSelected.length > 0) {
+            var fileToLoad = fileSelected[0];
+            var fileReader = new FileReader();
+            fileReader.onload = function (fileLoaderEvent) {
+                var srcData = fileLoaderEvent.target.result;
+                var newImage = document.createElement("img");
+                console.log(srcData)
+                newImage.src = srcData;
+                document.getElementById('displayImg').innerHTML = newImage.outerHTML;
+            }
+            fileReader.readAsDataURL(fileToLoad);
+        }
+    }
+    let listManga = JSON.parse(localStorage.getItem('list_manga'))
+    if (listManga==null){
+        listManga = [];
+    }
+    function showManga() {
+        let drawTable = '';
+        let classTR = '';
+        for (let i = 0; i < listManga.length; i++) {
+            if(i%2==0){
+                classTR = 'tale-warning'
+            } else {
+                classTR = 'tale-success'
+            }
+            drawTable += `<tr>
+                             <td>${i + 1}</td>
+                             <td>${listManga[i].img}</td>
+                                <td>${listManga[i].mangaName}</td>
+                                <td>${listManga[i].chapter_number}</td>
+                                <td>${listManga[i].statusManga}</td>
+                                <td><button class="btn btn-primary ">i</button></td>
+                        </tr>`
+        }
+        document.getElementById('drawTable').innerHTML = drawTable;
+    }
+    showManga();
+    function createManga(){
+        let id=0;
+        let img =document.getElementById('upload').value;
+        let mangaName = document.getElementById('name').value;
+        let chapter_number = +document.getElementById('chapter').value;
+        let statusManga = document.getElementById('status').value;
+        if(listManga.length===0){ //Nếu mảng rỗng , cho phần tử có id=1
+            id =1;
+        }else{
+            id =listManga[listManga.length-1].id+1;
+        }
+        let Manga = new manga(id, img, mangaName, chapter_number , statusManga);
+        listManga.push(Manga);
+        localStorage.removeItem('list_manga'); // xóa phần    tử dđi
+        localStorage.setItem('list_manga'  ,listManga); //rồi xét lại
+        showManga();
+    }
+</script>
+</html>
