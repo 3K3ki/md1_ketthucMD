@@ -599,3 +599,7 @@ margin-top: 20px;
 .a-kind{
     color: #dc4d4d;
 }
+.modal-backdrop.show{
+    opacity: 0;
+    display: none;
+}
