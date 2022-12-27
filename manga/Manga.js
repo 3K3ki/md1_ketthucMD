@@ -1,25 +1,27 @@
 class Manga {
-    id
-    img;
+    id;
+    image;
     mangaName;
     chapter_number;
     statusManga;
+    idUser;
 
 
-    constructor(id, img, mangaName, chapter_number, statusManga) {
+    constructor(id, image, mangaName, chapter_number, statusManga,idUser) {
         this.id = id;
-        this.img = img;
+        this.image = image;
         this.mangaName = mangaName;
         this.chapter_number = chapter_number;
         this.statusManga = statusManga;
+        this.idUser = idUser;
     }
     getId() { return this.id; }
-    setId(){this.id = id}
+    setId(id){this.id = id}
     getImg() {
         return this.img ;
     }
-    setImg(img) {
-        this.img = img;
+    setImg(image) {
+        this.img = image;
     }
     getmangaName() {
         return this.mangaName;

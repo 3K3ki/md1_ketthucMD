@@ -3,6 +3,11 @@
 <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 <head>
     <meta charset="UTF-8">
     <title>Đọc truyện</title>
@@ -90,7 +95,7 @@
                     <img src="../img_chapter/index-_8_.jpg" height="1374" width="800"/>
                     <img src="../img_chapter/index-_9_.jpg.jpg" height="1374" width="800"/>
                     <div class="chapter_control" style="display: block">
-                        <div style="float: left;margin-left: 30px;width: 450px"><a href="../index.html"><p>Trang chủ</p>
+                        <div style="float: left;margin-left: 30px;width: 450px"><a href="index.html"><p>Trang chủ</p>
                         </a></div>
                         <div class="change_chapter">
                             <button class="previous_chapter"><i class="bi bi-chevron-left"></i></button>
@@ -126,7 +131,7 @@
     <div class="div_bottom">
         <div class="left-bottom">
             <p class="logo" style="font-size: 30px">
-                <a href="../index.html"><span style="color: red">C</span>MANGA</a>
+                <a href="index.html"><span style="color: red">C</span>MANGA</a>
             </p>
             <div>
                 <p>Luôn cập nhật liên tục các bộ truyện mới, truyện VIP để phục vụ độc giả<br>
@@ -161,7 +166,87 @@
         </div>
     </div>
 </footer>
+<!--//loginform-->
+<!--<a class="btn btn-primary" role="button"  onclick="document.getElementById('id01').style.display='block'" >Đăng nhập</a>-->
+<div id="id01" class="modal">
+
+    <form class="modal-content animate" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="../img/hhinh-anh-luffy-chibi-thu-the-rat-ngau_055520104.jpg" alt="Avatar" class="avatar">
+        </div>
+        <div class="container">
+            <label class="alert alert-primary" style="color: red" id="checklogin"></label>
+            <label for="uname"><b id="validate_username1">Tài khoản</b></label>
+            <input type="text" placeholder="Nhập tài khoản" name="uname" id="username1" oninput="validate1()" required>
+
+            <label for="psw"><b id="validate-password1">Mật khẩu</b></label>
+            <input type="password" placeholder="Nhập mật khẩu" name="psw" id="password1" oninput="validate1()" required>
+
+            <button class="btn btn-outline-success" type="button" onclick="login()">Đăng nhập</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <button style="color: #e2e2e2" type="button" onclick="document.getElementById('id01').style.display='none'"
+                    class="cancelbtn">Hủy
+            </button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
+<!--//Singupform-->
+<div id="id02" class="modal">
+    <form class="modal-content animate" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="../img/hhinh-anh-luffy-chibi-thu-the-rat-ngau_055520104.jpg" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b id="validate_username">Tài khoản</b></label>
+            <input type="text" placeholder="Nhập tài khoản" name="uname" id="username" oninput="validate()" required>
+
+            <label for="psw"><b id="validate_password">Mật khẩu</b></label>
+            <input type="password" placeholder="Nhập mật khẩu" name="psw" id="password" oninput="validate()" required>
+
+            <label for=rpsw"><b id="validate_re">Nhập lại mật khẩu</b></label>
+            <input type="password" placeholder="Nhập lại mật khẩu" name="rpsw" id="re-password" oninput="validate()"
+                   required>
+
+            <button class="btn btn-outline-success" type="button" onclick="register()">Đăng ký</button>
+            <button class="btn btn-outline-success" type="button"
+                    onclick="document.getElementById('id01').style.display='block'">Đăng nhập
+            </button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <button style="" type="button" onclick="document.getElementById('id02').style.display='none'"
+                    class="cancelbtn">Hủy
+            </button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
 </body>
+<script>
+    let username2 = localStorage.getItem('nameKey')
+    if (username2 != null) {
+        document.getElementById('register').innerHTML = "";
+        document.getElementById('login').innerHTML = "";
+        document.getElementById('dropdownMenuButton1').innerHTML = username2;
+    } else {
+        document.getElementById('dropdown').style.display = 'none'
+    }
+
+    function logout() {
+        localStorage.removeItem('nameKey')
+        location.reload()
+    }
+</script>
 <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

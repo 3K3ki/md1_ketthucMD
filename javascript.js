@@ -163,8 +163,9 @@ function register() {
     console.log('i============',i)
     checkLogin = true ;
     let username1 = findByUserName(username).username;
-
-    localStorage.setItem("nameKey" ,username1 )
+    localStorage.setItem("nameKey", username1)
+    let id = findByUserName(username).id;
+    localStorage.setItem("idKey" ,id)
     console.log(username1)
     break;
 }else {
@@ -180,16 +181,3 @@ function register() {
 }
 
 //---------------------------HIện login-----------------------------
-let username2 = localStorage.getItem('nameKey')
-if (username2 != null) {
-    document.getElementById('register').innerHTML = "";
-    document.getElementById('login').innerHTML = "";
-    document.getElementById('dropdownMenuButton1').innerHTML = username2;
-} else {
-    document.getElementById('dropdown').style.display = 'none'
-}
-
-function logout() {
-    localStorage.removeItem('nameKey')
-    location.reload()
-}
