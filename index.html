@@ -87,7 +87,7 @@
                         </ul>
                     </li>
                     <li class="nav-item" style="">
-                        <a class="nav-link active" aria-current="page" href="manga/AddManga.html">AddManga</a>
+                        <a class="nav-link active" aria-current="page" id="add_manga" href="manga/AddManga.html">AddManga</a>
                     </li>
                 </ul>
                 <!--                    <form class="d-flex">-->
@@ -1136,6 +1136,7 @@
         document.getElementById('dropdownMenuButton1').innerHTML = username2;
     } else {
         document.getElementById('dropdown').style.display = 'none'
+        document.getElementById('add_manga').style.display = 'none'
     }
 
     function logout() {
