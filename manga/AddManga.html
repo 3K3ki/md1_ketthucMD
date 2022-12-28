@@ -87,7 +87,7 @@
                 </button>
             </div>
         </div>
-            <table class="table">
+            <table class="table" style="">
                 <tr class="table-primary">
                     <th>STT</th>
                     <th>Hình ảnh</th>
@@ -97,7 +97,7 @@
                     <th class="btn-change">EDIT</th>
                     <th class="btn-change">DELETE</th>
                 </tr>
-                <tbody id="drawTable"></tbody>
+                <tbody id="drawTable" ></tbody>
             </table>
         </div>
         <div ></div>
@@ -164,10 +164,10 @@
         </div>
         <div class="container">
             <label class="alert alert-primary" style="color: red" id="checklogin"></label>
-            <label for="uname"><b id="validate_username1">Tài khoản</b></label>
+            <label for=><b id="validate_username1">Tài khoản</b></label>
             <input type="text" placeholder="Nhập tài khoản" name="uname" id="username1" oninput="validate1()" required>
 
-            <label for="psw"><b id="validate-password1">Mật khẩu</b></label>
+            <label for=     ><b id="validate-password1">Mật khẩu</b></label>
             <input type="password" placeholder="Nhập mật khẩu" name="psw" id="password1" oninput="validate1()" required>
 
             <button class="btn btn-outline-success" type="button" onclick="login()">Đăng nhập</button>
@@ -192,13 +192,13 @@
         </div>
 
         <div class="container">
-            <label for="uname"><b id="validate_username">Tài khoản</b></label>
+            <label for=><b id="validate_username">Tài khoản</b></label>
             <input type="text" placeholder="Nhập tài khoản" name="uname" id="username" oninput="validate()" required>
 
-            <label for="psw"><b id="validate_password">Mật khẩu</b></label>
+            <label for=><b id="validate_password">Mật khẩu</b></label>
             <input type="password" placeholder="Nhập mật khẩu" name="psw" id="password" oninput="validate()" required>
 
-            <label for=rpsw"><b id="validate_re">Nhập lại mật khẩu</b></label>
+            <label for=><b id="validate_re">Nhập lại mật khẩu</b></label>
             <input type="password" placeholder="Nhập lại mật khẩu" name="rpsw" id="re-password" oninput="validate()"
                    required>
 
@@ -236,7 +236,7 @@
             }
             drawTable += `<tr>
                              <td>${i + 1}</td>
-                             <td><img style="width: auto;height: 200px;border-radius: 8%;" src="${listManga[i].image}" alt=""></td>
+                             <td><img style="width: auto;height: 150px;border-radius: 8%;" src="${listManga[i].image}" alt=""></td>
                                 <td>${listManga[i].mangaName}</td>
                                 <td>${listManga[i].chapter_number}</td>
                                 <td>${listManga[i].statusManga}</td>

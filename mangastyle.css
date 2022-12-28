@@ -31,7 +31,6 @@
  color: white;
 }
 .left-mid{
-
     width: 70%;
     padding-right: 25px;
     padding-left: 5px;
@@ -46,9 +45,9 @@
 .bg-light{
     background-color: #dc4d4d !important;
 }
-.pc-display{
-    margin-left: 60%;
-}
+/*.pc-display{*/
+/*    margin-left: 60%;*/
+/*}*/
 .grid{
     display: flex;
     flex-wrap: wrap;
@@ -58,11 +57,10 @@
 .grid-item {
     width: 24%;
     height: 260px;
-
     margin-left: 9px;
 }
 #box_chat{
-background-color: white;
+    background-color: white;
     padding: 10px;
     position: relative;
     border-radius: 5px;

@@ -7,6 +7,7 @@ class Manga {
     idUser;
 
 
+
     constructor(id, image, mangaName, chapter_number, statusManga,idUser) {
         this.id = id;
         this.image = image;

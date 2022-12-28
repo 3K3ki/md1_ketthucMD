@@ -46,10 +46,7 @@ let put = document.getElementById('chat_text').value;
 document.getElementById('chat_div').innerHTML ='' + put;
 }
 //input comment in chapter
-function commentChapter(){
-    let PC = document.getElementById('area_text').value;
-    document.getElementById('comment_list').innerHTML ='User : ' + PC;
-}
+
 
 //---------------Register-------------------
 let username;
