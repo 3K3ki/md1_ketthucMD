@@ -1,4 +1,3 @@
-
 var curDate = new Date();
 
 // Ngày hiện tại
@@ -11,40 +10,20 @@ var curMonth = curDate.getMonth() + 1;
 var curYear = curDate.getFullYear();
 
 // Gán vào thẻ HTML
-let currentDate =  document.querySelectorAll('.current-time')
+let currentDate = document.querySelectorAll('.current-time')
 for (let i = 0; i < currentDate.length; i++) {
     currentDate[1].innerHTML = curDay + "/" + curMonth + "/" + curYear;
 }
 
-
-// //login
-// // Get the modal
-// var modal = document.getElementById('id01');
-//
-// // When the user clicks anywhere //outsid of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }
-
-
 //switch light-dark mode
-function switchLightMode(){
-const btn = document.querySelector('.btn-outline-danger')
-btn.addEventListener('click', function(){
-    // THêm class dark cho body
-    document.body.classList.toggle('dark-theme');
-});
+function switchLightMode() {
+    const btn = document.querySelector('.btn-outline-danger')
+    btn.addEventListener('click', function () {
+        // THêm class dark cho body
+        document.body.classList.toggle('dark-theme');
+    });
 }
 
-
-
-//Input comment
-function comment(){
-let put = document.getElementById('chat_text').value;
-document.getElementById('chat_div').innerHTML ='' + put;
-}
 //input comment in chapter
 
 
@@ -52,9 +31,10 @@ document.getElementById('chat_div').innerHTML ='' + put;
 let username;
 let password;
 let rePassword;
+let upPassword;
 let checkValidate = false;
 let listUser = JSON.parse(localStorage.getItem('list_user'));
-if(listUser==null){
+if (listUser == null) {
     listUser = []
 }
 console.log('list User id--->', listUser)
@@ -84,7 +64,7 @@ function validate() {
         }
     }
     if (password.trim() === '') {
-        document.getElementById('validate-password').innerHTML = '<label style="color: red">The name is required!</label>'
+        document.getElementById('validate-password').innerHTML = '<label style="color: red">The password is required!</label>'
         checkValidate = false;
     } else {
         if (rePassword !== password) {
@@ -99,6 +79,7 @@ function validate() {
         // return;
     }
 }
+
 function register() {
     // validate();
     if (checkValidate) {
@@ -106,7 +87,7 @@ function register() {
         let id = 0;
         let user = new User(id, username, password)
         console.log('user --->', user)
-        if (listUser.length==0) {
+        if (listUser.length == 0) {
             // listUser = [];
             id = 1;
             user.setId(id);
@@ -123,58 +104,83 @@ function register() {
 }
 
 
-
-
 //----------------------------LOGIN---------------------------------
-    function validate1() {
+function validate1() {
     username = document.getElementById('username1').value;
-    if (username.trim()==""){
-    checkValidate = false;
-    document.getElementById('validate_username1').innerHTML = "<label style='color: red'> tai khoan  de trong </label> "
-}else {
-    checkValidate = true;
-    document.getElementById('validate_username1').innerHTML = "";
-}
+    if (username.trim() == "") {
+        checkValidate = false;
+        document.getElementById('validate_username1').innerHTML = "<label style='color: red'> tai khoan  de trong </label> "
+    } else {
+        checkValidate = true;
+        document.getElementById('validate_username1').innerHTML = "";
+    }
     password = document.getElementById('password1').value;
-    if (password.trim()==""){
-    checkValidate = false;
-    document.getElementById('validate-password1').innerHTML = "<label style='color: red'>mat khau de trong</label>"
-}else {
-    checkValidate=true ;
-    document.getElementById('validate-password1').innerHTML = "";
+    if (password.trim() == "") {
+        checkValidate = false;
+        document.getElementById('validate-password1').innerHTML = "<label style='color: red'>mat khau de trong</label>"
+    } else {
+        checkValidate = true;
+        document.getElementById('validate-password1').innerHTML = "";
+    }
 }
-}
-    function findByUserName(username) {
+
+function findByUserName(username) {
     for (let i = 0; i < listUser.length; i++) {
-    if (listUser[i].username==username){
-    return listUser[i]
+        if (listUser[i].username == username) {
+            return listUser[i]
+        }
+    }
+}
 
-}
-}
-}
-    function login() {
+function login() {
     if (checkValidate) {
-    let checkLogin = false;
-    for (let i = 0; i < listUser.length ; i++) {
-    if ( listUser[i].username==username && listUser[i].password == password ){
-    console.log('i============',i)
-    checkLogin = true ;
-    let username1 = findByUserName(username).username;
-    localStorage.setItem("nameKey", username1)
-    let id = findByUserName(username).id;
-    localStorage.setItem("idKey" ,id)
-    console.log(username1)
-    break;
-}else {
-    checkLogin = false;
-}
-}
-    console.log(checkLogin)
-    if (checkLogin){
-    location.href = "index.html"
-}else { document.getElementById('checklogin').innerHTML='tai khoan khong dung nhap lai nhe' }
+        let checkLogin = false;
+        for (let i = 0; i < listUser.length; i++) {
+            if (listUser[i].username == username && listUser[i].password == password) {
+                console.log('i============', i)
+                checkLogin = true;
+                let username1 = findByUserName(username).username;
+                localStorage.setItem("nameKey", username1)
+                let id = findByUserName(username).id;
+                localStorage.setItem("idKey", id)
+                console.log(username1)
+                break;
+            } else {
+                checkLogin = false;
+            }
+        }
+        console.log(checkLogin)
+        if (checkLogin) {
+            location.href = "index.html"
+        } else {
+            document.getElementById('checklogin').innerHTML = 'tai khoan khong dung nhap lai nhe'
+        }
 
-}
+    }
 }
 
-//---------------------------HIện login-----------------------------
+//---------------------------Đổi mật khẩu -----------------------------
+
+let idKey = localStorage.getItem('idKey')
+
+function findByPassword() {
+        let updatePass
+        for (let i = 0; i < listUser.length; i++) {
+            if ( idKey == listUser[i].id) {
+                updatePass = i;
+                break
+            }
+}listUser[updatePass].password = document.getElementById('update_pass').value
+    localStorage.removeItem('list_user')
+    localStorage.setItem('list_user', JSON.stringify(listUser));
+    location.reload()
+}
+
+
+// function updatePassword() {
+//     if (checkValidate){
+//         let updatePassword = false;
+//         let id = findByPassword(password).id;
+//         localStorage.setItem('')
+//     }
+// }

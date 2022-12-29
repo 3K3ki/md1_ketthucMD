@@ -54,7 +54,7 @@
     margin-left: 13%;
 
 }
-.grid-item {
+.grid_item {
     width: 24%;
     height: 260px;
     margin-left: 9px;
@@ -64,6 +64,8 @@
     padding: 10px;
     position: relative;
     border-radius: 5px;
+    overflow: scroll;
+    height: 250px;
 }
 .chat_div{
     /*height: 450px;*/
@@ -73,14 +75,14 @@
 }
 #chat_text{
     width: 100%;
-    margin-top: 18%;
+    /*margin-top: 18%;*/
     line-height: 35px;
     border-radius: 5px;
     border: 1px solid #ddd;
     padding: 0 10px;
 }
 #cricle{
-    position: absolute;
+    /*position: ;*/
     right: 8px;
     top: 78%;
     font-size: 24px;
@@ -265,6 +267,7 @@ footer .right-bottom p{
     border-color: #dc4d4d;
 }
 .right-top{
+    display: flex;
     float: right;
     width: 30%;
 }

@@ -34,22 +34,22 @@
                 </div>
                 <div class="d-flex align-items-center"
                      style="border: 1px solid #cccccc;border-radius: 50px;color: #757575;padding: 0 45px 0 20px;height: 44px;width: 35%;margin-top: 5px">
-                    <input class="form-control me-2" style="border: none" placeholder="Truyện bạn muốn tìm">
+                    <input class="form-control me-2" style="border: none"  id="search" placeholder="Truyện bạn muốn tìm">
                     <i class="bi bi-search " style="color: #dc4d4d"></i>
                 </div>
             </div>
             <div class="right-top" style="text-align: center;margin-top: 10px">
-                <a class="btn btn-primary" role="button" id="login"
-                   onclick="document.getElementById('id01').style.display='block'">Đăng nhập</a>
-                <a class="btn btn-primary" role="button" id="register"
-                   onclick="document.getElementById('id02').style.display='block'">Đăng ký</a>
+                <button class="btn btn-primary" id="login"
+                        onclick="document.getElementById('id01').style.display='block'">Đăng nhập</button>
+                <button class="btn btn-primary" id="register"
+                        onclick="document.getElementById('id02').style.display='block'">Đăng ký</button>
                 <div class="dropdown" id="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown button
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="document.getElementById('id03').style.display='block'">Đổi mật khẩu</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#" onclick="logout()">Log out</a></li>
                     </ul>
@@ -118,14 +118,15 @@
                 <div class="chat_div" id="">
                     <h3 id="chat_div"></h3>
                 </div>
-                <div class="chat_add" style="position: relative">
+            </div>
+                <div class="chat_add" style="position: relative ; display: flex">
                     <input id="chat_text" type="text" placeholder="Bạn muốn nhắn điều gì...">
                     <div>
                         <button id="cricle"><i onclick="createCommentt()" class="bi bi-arrow-down-square-fill"></i>
                         </button>
                     </div>
                 </div>
-            </div>
+
         </div>
         <div>
             <h3 style="margin-left: 140px;color: red"><i class="bi bi-arrow-repeat"></i>Truyện mới cập nhật
@@ -137,758 +138,8 @@
                         class="bi bi-funnel-fill"></i></button>
             </h3>
         </div>
-        <div class="grid">
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="manga/mangainfo.html">
-                        <img src="img/voluyendinhphng.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="manga/mangainfo.html">Võ Luyện Đỉnh Phong</a>
-                    </div>
-                    <div class="last-chapter">
-                        <a href="manga/readManga.html">Chapter 2895</a>
-                        <a class="current-time">34 phút trươớc</a>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/3542.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
+        <div class="grid" id="listComic">
 
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/16546.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/1596433091-0476.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/1597722745-0483.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="book-avarta">
-                    <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">
-                        <img src="img/book1.jpg" class="image">
-                    </a>
-                    <div class="book-details">
-                        <i class="bi bi-eye-fill"></i>
-                        428,1k
-                        <i class="bi bi-bookmark-fill"></i>
-                        728
-                    </div>
-                </div>
-                <div class="book-info">
-                    <div class="book-name">
-                        <a title="manga" href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co-23325">Manh Bảo Của
-                            Tôi Là Liêu</a>
-                    </div>
-                    <div class="last-chapter">
-                        <p>
-                            <a href="https://cmangaac.com/manh-bao-cua-toi-la-lieu-co/chapter-122/aGZlaGlm">Chapter
-                                122</a>
-                            <a class="current-time"></a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="page-direct" style="display: flex;justify-content: center">
             <div>
@@ -1063,6 +314,7 @@
         </div>
     </div>
 </footer>
+
 <!--//loginform-->
 <div id="id01" class="modal">
 
@@ -1073,10 +325,10 @@
         </div>
         <div class="container">
             <label class="alert alert-primary" style="color: red" id="checklogin"></label>
-            <label for="uname"><b id="validate_username1">Tài khoản</b></label>
+            <label ><b id="validate_username1">Tài khoản</b></label>
             <input type="text" placeholder="Nhập tài khoản" name="uname" id="username1" oninput="validate1()" required>
 
-            <label for="psw"><b id="validate-password1">Mật khẩu</b></label>
+            <label ><b id="validate-password1">Mật khẩu</b></label>
             <input type="password" placeholder="Nhập mật khẩu" name="psw" id="password1" oninput="validate1()" required>
 
             <button class="btn btn-outline-success" type="button" onclick="login()">Đăng nhập</button>
@@ -1092,6 +344,7 @@
         </div>
     </form>
 </div>
+
 <!--//Singupform-->
 <div id="id02" class="modal">
     <form class="modal-content animate" method="post">
@@ -1101,13 +354,13 @@
         </div>
 
         <div class="container">
-            <label for="uname"><b id="validate_username">Tài khoản</b></label>
+            <label ><b id="validate_username">Tài khoản</b></label>
             <input type="text" placeholder="Nhập tài khoản" name="uname" id="username" oninput="validate()" required>
 
-            <label for="psw"><b id="validate_password">Mật khẩu</b></label>
+            <label ><b id="validate_password">Mật khẩu</b></label>
             <input type="password" placeholder="Nhập mật khẩu" name="psw" id="password" oninput="validate()" required>
 
-            <label for=rpsw"><b id="validate_re">Nhập lại mật khẩu</b></label>
+            <label ><b id="validate_re">Nhập lại mật khẩu</b></label>
             <input type="password" placeholder="Nhập lại mật khẩu" name="rpsw" id="re-password" oninput="validate()"
                    required>
 
@@ -1127,12 +380,40 @@
         </div>
     </form>
 </div>
+
+<!--//ChangePasswordform-->
+<div id="id03" class="modal">
+    <form class="modal-content animate" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="img/hhinh-anh-luffy-chibi-thu-the-rat-ngau_055520104.jpg" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for=><b id="validate_up">Cập nhật mật khẩu</b></label>
+            <input type="password" id="update_pass" placeholder="Nhập lại mật khẩu" name="rpsw" oninput=""
+                   required>
+            <button class="btn btn-outline-success" type="button" onclick="findByPassword()"     >Đổi mật khẩu</button>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <button style="" type="button" onclick="document.getElementById('id03').style.display='none'"
+                    class="cancelbtn">Hủy
+            </button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
+
 </body>
 <script>
+    let listManga = JSON.parse(localStorage.getItem('list_manga'))
+    if (listManga==null){
+        listManga = [];
+    }
     let username2 = localStorage.getItem('nameKey')
     if (username2 != null) {
-        document.getElementById('register').innerHTML = "";
-        document.getElementById('login').innerHTML = "";
+        document.getElementById('register').style.display = "none";
+        document.getElementById('login').style.display = "none";
         document.getElementById('dropdownMenuButton1').innerHTML = username2;
     } else {
         document.getElementById('dropdown').style.display = 'none'
@@ -1144,6 +425,34 @@
         localStorage.removeItem('nameKey')
         location.reload()
     }
+    function showListComic() {
+        let  drawComic = listManga.reduce(function (draw1,manga) {
+            return  draw1 +`<div class="grid_item">
+                <div class="book-avarta">
+                    <a href="manga/mangainfo.html">
+                        <img src="${manga.image}" class="image">
+                    </a>
+                    <div class="book-details">
+                        <i class="bi bi-eye-fill"></i>
+                        428,1k
+                        <i class="bi bi-bookmark-fill"></i>
+                        728
+                    </div>
+                </div>
+                <div class="book-info">
+                    <div class="book-name">
+                        <a title="manga" href="manga/mangainfo.html">${manga.mangaName}</a>
+                    </div>
+                    <div class="last-chapter">
+                        <a href="manga/readManga.html">Chapter ${manga.chapter_number}</a>
+                    </div>
+                </div>
+            </div>`
+        },'')
+
+        document.getElementById('listComic').innerHTML= drawComic;
+    }
+    showListComic()
 
     function createCommentt(){
         // alert('1111')
@@ -1183,13 +492,13 @@
     function showCM() {
         let startCM = ''
         for(let i = 0; i <listCM.length; i++) {
-            startCM += `<p>${i + 1}<i class="bi bi-chat-right-dots-fill"></i>
+            startCM += `<h3>${i + 1}<i class="bi bi-chat-right-dots-fill"></i>
                         ${listCM[i].username3}:
-                         ${listCM[i].text}</p>`
+                         ${listCM[i].text}</h3>`
         }
         document.getElementById('chat_div').innerHTML = startCM
-    }
-    showCM()
+    }showCM()
+
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
