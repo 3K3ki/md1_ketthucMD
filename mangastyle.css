@@ -56,7 +56,7 @@
 }
 .grid_item {
     width: 24%;
-    height: 260px;
+    height: 300px;
     margin-left: 9px;
 }
 #box_chat{
@@ -106,8 +106,9 @@
 .image{
     width: 100%;
     display: block;
-    height: 161px;
-    object-fit: cover;
+    height: 200px;
+    object-fit: fill;
+
 }
 .book-name a{
     font-weight: bold;
@@ -136,6 +137,7 @@
 body{
     background: #f0f0f0;
     color: #222;
+    display: grid;
 }
 /* Dark Mode styles */
 body.dark-theme {
@@ -603,4 +605,18 @@ margin-top: 20px;
 .modal-backdrop.show{
     opacity: 0;
     display: none;
+}
+.imgNearMid{
+    position: absolute;
+    z-index: 1;
+    width: 143px;
+    height: 100%;
+    margin-top: 126px;
+}
+.chapter_control{
+    float: right;
+    transition: top 0.3s;
+    display: block;
+    position: fixed;
+    background-color: white;
 }

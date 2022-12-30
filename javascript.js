@@ -184,3 +184,15 @@ function findByPassword() {
 //         localStorage.setItem('')
 //     }
 // }
+
+function searchManga(){
+    let searchMg = document.getElementById('search').value;
+    let bookName = document.querySelectorAll(".grid_item");
+    console.log(bookName)
+    for (let index = 0; index < bookName.length; index++) {
+        if(bookName[index].innerText.toLowerCase().includes(searchMg.toLowerCase())){
+            bookName[index].style.display = "block";
+        }else{
+            bookName[index].style.display = "none"}
+    }
+}
