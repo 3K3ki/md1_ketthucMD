@@ -1,19 +1,19 @@
-var curDate = new Date();
-
-// Ngày hiện tại
-var curDay = curDate.getDate();
-
-// Tháng hiện tại
-var curMonth = curDate.getMonth() + 1;
-
-// Năm hiện tại
-var curYear = curDate.getFullYear();
-
-// Gán vào thẻ HTML
-let currentDate = document.querySelectorAll('.current-time')
-for (let i = 0; i < currentDate.length; i++) {
-    currentDate[1].innerHTML = curDay + "/" + curMonth + "/" + curYear;
-}
+// var curDate = new Date();
+//
+// // Ngày hiện tại
+// var curDay = curDate.getDate();
+//
+// // Tháng hiện tại
+// var curMonth = curDate.getMonth() + 1;
+//
+// // Năm hiện tại
+// var curYear = curDate.getFullYear();
+//
+// // Gán vào thẻ HTML
+// let currentDate = document.querySelectorAll('.current-time')
+// for (let i = 0; i < currentDate.length; i++) {
+//     currentDate[1].innerHTML = curDay + "/" + curMonth + "/" + curYear;
+// }
 
 //switch light-dark mode
 function switchLightMode() {
@@ -24,7 +24,6 @@ function switchLightMode() {
     });
 }
 
-//input comment in chapter
 
 
 //---------------Register-------------------

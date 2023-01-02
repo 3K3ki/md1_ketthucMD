@@ -54,18 +54,42 @@
             </div>
         </div>
     </div>
-    <div  class="top">
-        <div id="menu" style="background-color: #dc4d4d;height: 50px; text-align: center;">
-            <ul >
-                <li><a href="#" class="li-a-set">Thể loại</a></li>
-                <li><a href="#" class="li-a-set">VIP Truyện Siêu Hay</a></li>
-                <li><a href="#" class="li-a-set">CGame</a></li>
-                <li><a href="#" class="li-a-set">Raw Truyện</a></li>
-                <li style="margin-left: 45%"><a href="#" class="li-a-set">Chợ</a></li>
-                <li><a href="#" class="li-a-set">Đấu Trường</a></li>
-            </ul>
-        </div>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid" style="margin-left: 131px">
+                <a class="navbar-brand" href="#">CGame</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item" style="">
+                            <a class="nav-link active" aria-current="page" href="#">Raw</a>
+                        </li>
+                        <li class="nav-item dropdown" style="margin-left: 40px">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Thể loại
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" style="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
+
 </div>
 <div class="content" style="height: auto !important;">
     <div class="div_middle1" style="height: auto !important;width: 1200px;margin: 0 auto">
@@ -75,6 +99,7 @@
             <h2 class="truyen_tranh" style="margin-left: 5px"> > </h2>
             <h2 class="truyen_tranh"><a href="" style="color: #3f94d5">Võ Luyện Đỉnh Phong</a></h2>
         </div>
+
             <div class="book-detail">
                 <div class="book_info" style="padding: 15px; position: relative">
                     <div class="book_avarta" >
@@ -115,11 +140,12 @@
                             <button class="btn btn-success" ><i class="bi bi-book"></i>Đọc từ đầu</button>
                             <button class="btn btn-warning" ><a href="readManga.html" style="color: #f0f0f0"><i class="bi bi-book"></i>Đọc tiếp</a></button>
                             <button class="btn btn-danger"><i class="bi bi-bookmark-fill"></i>Theo dõi</button>
-                            <button class="btn btn-secondary" ><i class="bi bi-exclamation-triangle"></i>Báo lỗi</button>
-                            <button class="btn btn-primary"><i class="bi bi-facebook"></i>Share</button>
+                            <button class="btn btn-secondary" onclick="baoLoi()"><i class="bi bi-exclamation-triangle"></i>Báo lỗi</button>
+                            <button class="btn btn-primary" ><a class="bi bi-facebook" style="color: #f0f0f0" href="https://cmangaac.com/"></a>Share</button>
                         </div>
                     </div>
                 </div>
+
                     <h3><i class="bi bi-info-circle-fill" style="margin-right: 5px"></i>Giới thiệu</h3>
                 <p><a href="" style="color: #3f94d5">Võ Luyện Đỉnh Phong</a> được cập nhật nhanh nhất và đầy đủ nhất tại Cmangavip.com . Bạn đọc đừng quên để lại bình luận và chia sẻ, ủng hộ Cmanga ra các chương mới nhất của truyện Võ Luyện Đỉnh Phong nhé.</p>
                 <h3>
@@ -144,6 +170,7 @@
                         </tbody>
                     </table>
                 </div>
+
                 <h3><i class="bi bi-chat-fill" style="margin-right: 5px"></i><span style="margin-right: 5px">16,308</span>Bình luận</h3>
                 <div class="book_comment" style="margin-bottom: 40px">
                     <div class="comment_text" style="position: relative;display: flex">
@@ -232,11 +259,15 @@
         document.getElementById('dropdownMenuButton1').innerHTML = username2;
     } else {
         document.getElementById('dropdown').style.display = 'none'
+
     }
 
     function logout() {
         localStorage.removeItem('nameKey')
         location.reload()
+    }
+    function baoLoi(){
+        alert("Báo lỗi thành công")
     }
 </script>
 <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

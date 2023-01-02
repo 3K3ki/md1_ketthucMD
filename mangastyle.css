@@ -141,7 +141,7 @@ body{
 }
 /* Dark Mode styles */
 body.dark-theme {
-    color: #eee;
+    /*color: #eee;*/
     background: #121212;
 }
 .comuni{
@@ -276,7 +276,7 @@ footer .right-bottom p{
 .btn-outline-primary{
     color: black;
     font-weight: bold;
-    border: none;
+    border-color: #dc4d4d;
 }
 
 /*////login*/
